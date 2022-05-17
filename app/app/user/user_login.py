@@ -19,12 +19,13 @@ async def user_login(
         if data[0][0]['password'] == form_data.password:
 
             return {
-                f"{form_data.email}": "logged in sucessfullyyyy"
+                f"{form_data.email}": "Logged in"
             }
 
         else:
             return {
-                "logged in fails"
+                "Invalid username or password"
             }
     except Exception as e:
         print("exception============================", e)
+        return {"Error occurred": e}

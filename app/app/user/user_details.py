@@ -6,9 +6,6 @@ from .route import user
 from ..common_functions import resultset
 
 
-
-
-
 @user.post("/user/user_details", tags=["User"])
 async def user_details(
         form_data: UserDetailsForm = Depends()
@@ -26,6 +23,6 @@ async def user_details(
 
         }
 
-
     except Exception as e:
         print("exception============================", e)
+        return {"Error occurred": e}

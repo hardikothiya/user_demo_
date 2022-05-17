@@ -24,3 +24,4 @@ async def delete_user(
 
     except Exception as e:
         print("exception============================", e)
+        return {"Error occurred" : e}
