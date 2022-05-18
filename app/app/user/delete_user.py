@@ -3,7 +3,6 @@ from shared.database import cursor
 from fastapi import Depends
 from .forms.delete_user import DeleteUserForm
 from .route import user
-from ..common_functions import resultset
 
 
 @user.post("/user/delete_user", tags=["User"])
@@ -15,7 +14,6 @@ async def delete_user(
 
         cursor.execute(exestr)
 
-
         return {
             "code": "success",
             "data": "user deleted successfully"
@@ -24,4 +22,4 @@ async def delete_user(
 
     except Exception as e:
         print("exception============================", e)
-        return {"Error occurred" : e}
+        return {"Error occurred": e}

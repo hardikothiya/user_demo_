@@ -10,7 +10,8 @@ class UserRegistratrionForm:
             address: str = Body(...),
             city: str = Body(...),
             password: str = Body(...),
-            confirm_password: str = Body(...)
+            confirm_password: str = Body(...),
+            state_id : int = Body(0)
     ):
         self.username = username
         self.email = email
@@ -19,6 +20,7 @@ class UserRegistratrionForm:
         self.city = city
         self.password = password
         self.confirm_password = confirm_password
+        self.state_id = state_id
 
 
 

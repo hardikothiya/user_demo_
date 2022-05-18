@@ -15,7 +15,7 @@ async def update_user(
 
         cursor.execute(exestr)
         print("=================================")
-        print("=++++++++++++++")
         return {f"{form_data.email} has been updated"}
+
     except Exception as e:
         print("exception============================", e)
