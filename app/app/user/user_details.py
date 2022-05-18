@@ -22,12 +22,9 @@ async def user_details(
         print(cursor)
         y = resultset(cursor)
 
-
-
         return {
             "code": "success",
             "data": y
-
         }
 
     except Exception as e:

@@ -11,11 +11,14 @@ async def update_user(
         form_data: UpdateUSerForm = Depends()
 ):
     try:
-        exestr = f" update user_master set username = '{form_data.username}', city = '{form_data.city}', mobile_no = '{form_data.mobile_no}', address = '{form_data.address}' where email = '{form_data.email}'"
+        if 1 <= form_data.state_id <= 36:
+            exestr = f" update user_master set username = '{form_data.username}', city = '{form_data.city}', mobile_no = '{form_data.mobile_no}', address = '{form_data.address}', state_id = '{form_data.state_id}' where email = '{form_data.email}'"
 
-        cursor.execute(exestr)
-        print("=================================")
-        return {f"{form_data.email} has been updated"}
+            cursor.execute(exestr)
+            print("=================================")
+            return {f"{form_data.username} has been updated"}
+        else:
+            return {"Invalid state id"}
 
     except Exception as e:
         print("exception============================", e)

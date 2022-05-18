@@ -9,7 +9,8 @@ class UpdateUSerForm:
             username: str = Body(...),
             address: str = Body(...),
             city: str = Body(...),
-            mobile_no: int = Body(0)
+            mobile_no: int = Body(0),
+            state_id : int = Body(0)
 
     ):
         self.email = email
@@ -17,3 +18,4 @@ class UpdateUSerForm:
         self.address = address
         self.city = city
         self.mobile_no = mobile_no
+        self.state_id = state_id
